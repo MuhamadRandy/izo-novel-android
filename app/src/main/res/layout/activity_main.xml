@@ -43,7 +43,6 @@
                     android:background="@drawable/border"
                     android:padding="10dp"
                     android:layout_margin="5dp"
-                    android:clickable="true"
                     android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -64,7 +63,7 @@
                         <TextView
                             android:textColor="@color/text_header"
                             android:layout_width="match_parent"
-                            android:text="Daftr Novel"
+                            android:text="Daftar Novel"
                             android:textSize="16dp"
                             android:textStyle="bold"
                             android:layout_height="wrap_content"/>
@@ -115,7 +114,6 @@
 
                 <LinearLayout
                     android:id="@+id/informasi_pengguna"
-                    android:clickable="true"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:background="@drawable/border"
@@ -160,6 +158,7 @@
                 android:padding="10dp"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:id="@+id/novel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Novel  favorite"
@@ -177,6 +176,7 @@
                         android:layout_weight="1"
                         android:textColor="@color/text_sub"/>
                     <TextView
+                        android:id="@+id/favorite_novel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="More"
@@ -203,6 +203,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/detail_nov"
                     android:layout_width="120dp"
                     android:layout_marginLeft="20dp"
                     android:orientation="vertical"
@@ -236,6 +237,7 @@
                         android:text="Judul novel ini judul"
                         android:textColor="@color/text_sub"/>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_marginLeft="20dp"
@@ -273,6 +275,13 @@
 
             </LinearLayout>
 </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="Judul novel ini judul"
+                android:textColor="@color/text_sub" />
         </LinearLayout>
     </ScrollView>
 </androidx.appcompat.widget.LinearLayoutCompat>

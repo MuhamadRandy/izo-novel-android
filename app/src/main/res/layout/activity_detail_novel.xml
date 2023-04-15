@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/aqua"
+    tools:context=".Detail_Novel">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_detail"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/buya" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pandangan Hidup Islam"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="35dp"
+            />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_book"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="35dp">
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="pengarang"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:layout_weight="4"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Nama pengarang"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:padding="5dp"
+                android:layout_weight="4"
+                android:gravity="end"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/garis" />
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Penerbit"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textSize="15dp"
+                android:layout_weight="4"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Nama Penerbit"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textSize="14dp"
+                android:layout_weight="4"
+                android:gravity="end"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/garis" />
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Tahun Penerbit"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textSize="14dp"
+                android:layout_weight="4"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="YYYY"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textSize="14dp"
+                android:layout_weight="4"
+                android:gravity="end"/>
+
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/garis" />
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Genre"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textSize="14dp"
+                android:layout_weight="4"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Genre Novel"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textSize="14dp"
+                android:layout_weight="4"
+                android:gravity="end"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/garis" />
+    </TableLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="35dp"
+        android:background="@color/bg_num"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:layout_marginHorizontal="10dp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/eye"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="65.1k Dibaca"
+                        android:textSize="10dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/love"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="65.1k Disukai"
+                        android:textSize="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="2dp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/comment"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20k ulasan"
+                        android:textSize="10dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+   <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pandangan Hidup Umat Muslim mengacu pada Al-Qur’an dan Sunnah yang didahului oleh semangat tauhid. Pentingnya membaca dan memaknai Al-Qur’an memang sangat penting sebagai pandangan hidup umat Muslim. Al-Qur’an adalah kitab suci dan bagian yang paling penting dari umat Islam. Al-Qur’an adalah hukum dan perintah, pedoman untuk berperilaku dam moral, serta berisi tentang filosofi agama."
+                android:textColor="@color/black" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buya Hamka menjelaskan bahwa pandangan hidup seorang Muslim mengacu pada Al-Qur`an dan Sunnah yang didahului oleh semangat tauhid, yaitu meng-Esa-kan Allah SWT. "
+            android:textColor="@color/black" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:paddingVertical="10dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Mulai baca sekarang"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="100dp"/>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
