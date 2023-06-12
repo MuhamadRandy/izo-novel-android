@@ -73,7 +73,7 @@ ProgressDialog progressDialog;
             @Override
             public void onFailure(Call<LoginResponseModel> call, Throwable t) {
                 progressDialog.dismiss();
-                // kondisi jika gagal login ketika hit api
+                //kondisi jika gagal login ketika hit api
                 Toast.makeText(LoginActivity.this, t.toString(), Toast.LENGTH_LONG).show();
             }
         });

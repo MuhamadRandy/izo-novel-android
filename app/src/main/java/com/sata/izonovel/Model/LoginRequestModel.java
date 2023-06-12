@@ -59,7 +59,5 @@ public class LoginRequestModel {
 
         private String username;
         private String password;
-
-
     }
 }

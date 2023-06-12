@@ -3,7 +3,6 @@ package com.sata.izonovel.Model;
 import org.w3c.dom.Document;
 
 public class LoginResponseModel {
-    private Document document;
 
     public Document getDocument() {
         return document;
@@ -13,7 +12,8 @@ public class LoginResponseModel {
         this.document = document;
     }
 
-    public class Document{
+    private Document document;
+    public static class Document{
         public String get_id() {
             return _id;
         }
@@ -38,18 +38,18 @@ public class LoginResponseModel {
             this.password = password;
         }
 
-        public String getFullname() {
-            return fullname;
+        public String getFullName() {
+            return fullName;
         }
 
-        public void setFullname(String fullname) {
-            this.fullname = fullname;
+        public void setFullName(String fullName) {
+            this.fullName = fullName;
         }
 
         private String _id;
         private String username;
         private String password;
-        private String fullname;
+        private String fullName;
 
 
     }
