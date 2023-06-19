@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button btsubmitbutton, btcancelbutton;
 
     ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,20 +73,23 @@ public class RegisterActivity extends AppCompatActivity {
         ApiService.endPoint().registerUser(registerRequestModel).enqueue(new Callback<InsertResponseModel>() {
             @Override
             public void onResponse(Call<InsertResponseModel> call, Response<InsertResponseModel> response) {
-            progressDialog.dismiss();
-            String responseId =  response.body().getInsertedId().toString();
+                progressDialog.dismiss();
+                String responseId = response.body().getInsertedId().toString();
 
-            String pesan = "Data berhasil disimpang dengan ID"+responseId;
-            AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-            builder.setTitle("Info");
-            builder.setMessage(pesan)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int which) {
-                            ClearForm();
-                        }
-                    });
-            builder.show();
+                String pesan = "Data berhasil disimpan dengan ID "+responseId+"\n \n Klik Ok unutk melanjutkan";
+                AlertDialog.Builder builder =  new AlertDialog.Builder(RegisterActivity.this);
+                builder.setTitle("Infro");
+                builder.setMessage(pesan)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                clearForm();
+                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                startActivity(intent);
+
+                            }
+                        });
+                builder.show();
             }
 
             @Override
@@ -95,10 +100,9 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this, t.toString(), Toast.LENGTH_LONG).show();
             }
         });
-
     }
 
-    private void ClearForm(){
+    private void clearForm(){
         firstname.setText("");
         lastname.setText("");
         email.setText("");
