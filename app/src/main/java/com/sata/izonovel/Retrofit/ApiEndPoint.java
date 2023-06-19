@@ -1,5 +1,7 @@
 package com.sata.izonovel.Retrofit;
 
+import com.sata.izonovel.Model.ForminputRequest;
+import com.sata.izonovel.Model.ForminputResponse;
 import com.sata.izonovel.Model.InsertResponseModel;
 import com.sata.izonovel.Model.LoginRequestModel;
 import com.sata.izonovel.Model.LoginResponseModel;
@@ -20,4 +22,8 @@ public interface ApiEndPoint {
     @Headers({"api-key: " + API_KEY, "Content-Type:application/json"})
     @POST("app/data-yvczw/endpoint/data/v1/action/findOne")
     Call<LoginResponseModel> onSubmitLogin(@Body LoginRequestModel loginRequestModel);
+
+    @Headers({"api-key: " + API_KEY, "Content-Type:application/json"})
+    @POST("app/data-yvczw/endpoint/data/v1/action/insertOne")
+    Call<ForminputResponse> onSaveList(@Body ForminputRequest forminputRequest);
 }

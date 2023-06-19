@@ -38,7 +38,7 @@ ProgressDialog progressDialog;
             }
         });
     }
-    private void onSubmitLogin() {
+    private void onSubmitLogin(){
         LoginRequestModel loginRequestModel = new LoginRequestModel();
         loginRequestModel.setCollection("users");
         loginRequestModel.setDatabase("izonovel");
@@ -60,6 +60,7 @@ ProgressDialog progressDialog;
         ApiService.endPoint().onSubmitLogin(loginRequestModel).enqueue(new Callback<LoginResponseModel>() {
             @Override
             public void onResponse(Call<LoginResponseModel> call, Response<LoginResponseModel> response) {
+                progressDialog.dismiss();
                 //kondisi jika berhasil login
                 if(response.body().getDocument() != null){
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -73,7 +74,7 @@ ProgressDialog progressDialog;
             @Override
             public void onFailure(Call<LoginResponseModel> call, Throwable t) {
                 progressDialog.dismiss();
-                //kondisi jika gagal login ketika hit api
+                // kondisi jika gagal login ketika hit api
                 Toast.makeText(LoginActivity.this, t.toString(), Toast.LENGTH_LONG).show();
             }
         });
