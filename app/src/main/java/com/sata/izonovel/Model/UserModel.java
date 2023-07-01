@@ -1,17 +1,22 @@
 package com.sata.izonovel.Model;
 
-import java.util.List;
 
 public class UserModel {
+    public UserModel.document getDocument() {
+        return document;
+    }
+
+    public void setDocument(UserModel.document document) {
+        this.document = document;
+    }
 
     private document document;
 
-
-    public class  document{
+    public class document{
         private String _id;
         private String username;
         private String password;
-        private String fullname;
+        private String fullName;
 
         public String get_id() {
             return _id;
@@ -37,12 +42,12 @@ public class UserModel {
             this.password = password;
         }
 
-        public String getFullname() {
-            return fullname;
+        public String getFullName() {
+            return fullName;
         }
 
-        public void setFullname(String fullname) {
-            this.fullname = fullname;
+        public void setFullName(String fullName) {
+            this.fullName = fullName;
         }
     }
 }

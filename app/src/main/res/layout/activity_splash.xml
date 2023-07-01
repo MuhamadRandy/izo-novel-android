@@ -23,12 +23,12 @@
             android:textColor="@color/white"
             android:textAlignment="center"
             android:textFontWeight="@integer/material_motion_duration_long_1"
-            android:text="Muhamad Randy Aranda " />
+            android:text="Muhamad Randy " />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:text="powered by @ M.RandyAranda.com" />
+            android:text="powere by @ MuhamadRandyAranda" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

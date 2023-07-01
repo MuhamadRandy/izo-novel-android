@@ -6,14 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout menuInfoPengguna, menu_one, detail_nov;
-    TextView favorite_novel,novel,inputnovel ;
-
+    TextView menuFavorite, menuInfoPengguna, menuDaftarNovel, menuInputNovel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,38 +27,31 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        favorite_novel = findViewById(R.id.favorite_novel);
-        favorite_novel.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                Intent intent = new Intent(MainActivity.this, favorite.class);
-                startActivity(intent);
-                return false;
-            }
-        });
-        menu_one = findViewById(R.id.menu_one);
-        menu_one.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                Intent intent = new Intent(MainActivity.this, DaftarNovel.class);
-                startActivity(intent);
-                return false;
 
-            }
-        });
-        detail_nov = findViewById(R.id.detail_nov);
-        detail_nov.setOnTouchListener(new View.OnTouchListener() {
+        menuFavorite = findViewById(R.id.favorite_more);
+        menuFavorite.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                Intent intent = new Intent(MainActivity.this, Detail_Novel.class);
+            public boolean onTouch(View v, MotionEvent event) {
+                Intent intent = new Intent(MainActivity.this, FavoritActivity.class);
                 startActivity(intent);
                 return false;
             }
         });
-        inputnovel = findViewById(R.id.inputnovel);
-        inputnovel.setOnTouchListener(new View.OnTouchListener() {
+
+        menuDaftarNovel = findViewById(R.id.daftar_novel);
+        menuDaftarNovel.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
+            public boolean onTouch(View v, MotionEvent event) {
+                Intent intent = new Intent(MainActivity.this, DaftarNovelActivity.class);
+                startActivity(intent);
+                return false;
+            }
+        });
+
+        menuInputNovel = findViewById(R.id.tvInputNovel);
+        menuInputNovel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
                 Intent intent = new Intent(MainActivity.this, FormInptActivity.class);
                 startActivity(intent);
                 return false;

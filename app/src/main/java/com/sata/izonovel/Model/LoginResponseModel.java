@@ -1,9 +1,6 @@
 package com.sata.izonovel.Model;
 
-import org.w3c.dom.Document;
-
 public class LoginResponseModel {
-
     public Document getDocument() {
         return document;
     }
@@ -50,10 +47,7 @@ public class LoginResponseModel {
         private String username;
         private String password;
         private String fullName;
-
-
     }
-
-
-
 }
+
+

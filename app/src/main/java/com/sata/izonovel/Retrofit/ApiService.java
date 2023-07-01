@@ -1,33 +1,28 @@
 package com.sata.izonovel.Retrofit;
 
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiService {
-    private static  String BASE_URL = "https://data.mongodb-api.com/";
+public class APIService {
+        private static String BASE_URL = "https://data.mongodb-api.com/";
+        private static Retrofit retrofit = null;
 
-    private static Retrofit retrofit = null;
+        public static ApiEndpoint endpoint(){
 
-    public static ApiEndPoint endPoint(){
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        // set your desired log level
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+            OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+            httpClient.addInterceptor(logging);
 
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        // add your other interceptors …
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(httpClient.build())
+                    .build();
+            return retrofit.create( ApiEndpoint.class );
+        }
 
-        // add logging as last interceptor
-        httpClient.addInterceptor(logging);
-
-
-        retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(httpClient.build())
-                .build();
-        return retrofit.create( ApiEndPoint.class);
-    }
 }
-

@@ -7,29 +7,26 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Randy Aranda"
+        android:label="Muhamad Randy Aranda"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IzoNovel">
         <activity
+            android:name=".DetailNovelActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".Detail_Novel"
-            android:exported="true" />
-        <activity
-            android:name=".favorite"
             android:exported="true"></activity>
         <activity
-            android:name=".DaftarNovel"
+            android:name=".FavoritActivity"
+            android:exported="false"
+            android:label="@string/title_favorite" />
+        <activity
+            android:name=".DaftarNovelActivity"
             android:exported="false" />
         <activity
             android:name=".FormInptActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -46,13 +43,11 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="true"
-            android:label="Form Register">
-
-        </activity>
+            android:label="Form Register"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>
