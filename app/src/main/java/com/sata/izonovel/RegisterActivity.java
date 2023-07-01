@@ -1,6 +1,5 @@
 package com.sata.izonovel;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -12,20 +11,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
 import com.sata.izonovel.Model.InsertResponseModel;
 import com.sata.izonovel.Model.RegisterRequestModel;
-import com.sata.izonovel.Retrofit.ApiService;
+import com.sata.izonovel.Retrofit.APIService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText firstname, lastname, email, password;
-    Button btsubmitbutton, btcancelbutton;
+    EditText etFirstname, etLastName, etPassword, etEmail;
+
+    MaterialButton btnRegister;
 
     ProgressDialog progressDialog;
 
@@ -34,43 +34,42 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        etFirstname = findViewById(R.id.et_firs_name);
+        etLastName = findViewById(R.id.et_last_name);
+        etPassword = findViewById(R.id.et_password);
+        etEmail = findViewById(R.id.et_email);
+        btnRegister = findViewById(R.id.btn_register_submit);
 
-        firstname = findViewById(R.id.firstname);
-        lastname = findViewById(R.id.lastname);
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        btsubmitbutton = findViewById(R.id.btsubmitbutton);
-        btcancelbutton = findViewById(R.id.btcancelbutton);
 
-        btsubmitbutton.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 onSubmitRegister();
             }
         });
     }
 
-    private void onSubmitRegister() {
+    private  void  onSubmitRegister(){
         RegisterRequestModel registerRequestModel = new RegisterRequestModel();
         registerRequestModel.setDataSource("Cluster0");
         registerRequestModel.setDatabase("izonovel");
         registerRequestModel.setCollection("users");
 
         RegisterRequestModel.Document document = new RegisterRequestModel.Document();
-        String FullName = firstname.getText().toString() +" "+ lastname.getText().toString();
+        String FullName = etFirstname.getText().toString() +" "+ etLastName.getText().toString();
         document.setFullName(FullName);
-        document.setUsername(email.getText().toString());
-        document.setPassword(password.getText().toString());
+        document.setUsername(etEmail.getText().toString());
+        document.setPassword(etPassword.getText().toString());
 
         registerRequestModel.setDocument(document);
 
-        progressDialog =new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Info");
-        progressDialog.setMessage("Submitting Data...");
+        progressDialog.setMessage("Submiting Data....");
         progressDialog.show();
 
 
-        ApiService.endPoint().registerUser(registerRequestModel).enqueue(new Callback<InsertResponseModel>() {
+        APIService.endpoint().registerUser(registerRequestModel).enqueue(new Callback<InsertResponseModel>() {
             @Override
             public void onResponse(Call<InsertResponseModel> call, Response<InsertResponseModel> response) {
                 progressDialog.dismiss();
@@ -103,10 +102,10 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void clearForm(){
-        firstname.setText("");
-        lastname.setText("");
-        email.setText("");
-        password.setText("");
+        etFirstname.setText("");
+        etLastName.setText("");
+        etEmail.setText("");
+        etPassword.setText("");
     }
-}
 
+}

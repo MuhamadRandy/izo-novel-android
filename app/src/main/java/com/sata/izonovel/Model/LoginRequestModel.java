@@ -1,7 +1,5 @@
 package com.sata.izonovel.Model;
 
-import java.util.logging.Filter;
-
 public class LoginRequestModel {
     private String collection;
     private String database;

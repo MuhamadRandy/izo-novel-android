@@ -5,90 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
-    tools:context=".DaftarNovel">
+    tools:context=".DaftarNovelActivity">
 
-    <LinearLayout
-        android:id="@+id/daftar_novel"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reycle_daftar_novel"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:background="@drawable/border"
-        android:padding="5dp"
-        android:layout_margin="20dp"
-        android:clickable="true"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_weight="4"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/bg"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="2"
-            android:layout_height="wrap_content">
-            <TextView
-                android:textColor="@color/text_header"
-                android:layout_width="match_parent"
-                    android:text="Menanti Hari berganti"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:textColor="@color/text_sub"
-                android:layout_width="match_parent"
-                android:text="2020-01-02 | Titi Sanaria"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:text="deskripsi sinopsis disini deskrpisi"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:text="deskripsi sinopsis disini deskrpisi"
-                android:layout_height="wrap_content"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+        android:layout_height="match_parent"/>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/kelinci"
-                        android:layout_marginTop="10dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="Genre Romance"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/dayung"
-                    android:layout_marginTop="10dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="Chapter 1 (satu)"
-                    android:textColor="@color/black" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

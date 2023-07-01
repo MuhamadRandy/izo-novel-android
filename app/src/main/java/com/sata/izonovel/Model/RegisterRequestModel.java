@@ -1,13 +1,6 @@
 package com.sata.izonovel.Model;
 
-import org.w3c.dom.Document;
-
 public class RegisterRequestModel {
-    private String dataSource;
-    private String database;
-    private String collection;
-    private Document document;
-
     public String getDataSource() {
         return dataSource;
     }
@@ -32,15 +25,20 @@ public class RegisterRequestModel {
         this.collection = collection;
     }
 
-    public Document getDocument() {
+    private  String dataSource;
+    private String database;
+    private String collection;
+
+    public RegisterRequestModel.Document getDocument() {
         return document;
     }
 
-    public void setDocument(Document document) {
+    public void setDocument(RegisterRequestModel.Document document) {
         this.document = document;
     }
 
-    public static class Document {
+    private Document document;
+    public static class Document{
         private String username;
         private String password;
         private String fullName;

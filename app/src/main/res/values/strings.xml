@@ -5,6 +5,8 @@
     <string name="login_email">Email</string>
     <string name="login_password">Password</string>
     <string name="biodata_header">Form Biodata</string>
+    <string name="title_favorite">Novel Favorite</string>
+    <string name="title_daftar_novel">Daftar Novel</string>
     <string-array name="option_agama">
         <item>Islam</item>
         <item>Kristen</item>
